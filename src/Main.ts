@@ -16,5 +16,6 @@ export default class Main {
 
   public core(): void {
     //
+    console.log("aaa2")
   }
 }
