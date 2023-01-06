@@ -1,0 +1,58 @@
+{
+  "name": "dodai",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "bin": {
+    "zumen": "dist/bin/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "run-p build:*",
+    "build:common": "tsc",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trysd/npm-dodai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trysd/npm-dodai/issues"
+  },
+  "homepage": "https://github.com/trysd/npm-dodai#readme",
+  "dependencies": {
+    "@types/node": "^17.0.18",
+    "ejs": "^3.1.8",
+    "fs-extra": "^11.1.0",
+    "yaml": "^2.2.1"
+  },
+  "devDependencies": {
+    "@jest/types": "^29.3.1",
+    "@types/ejs": "^3.1.1",
+    "@types/fs-extra": "^9.0.13",
+    "@types/jest": "^29.2.5",
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.48.0",
+    "@typescript-eslint/parser": "^5.48.0",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
+    "jest": "^29.3.1",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.5.3"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
