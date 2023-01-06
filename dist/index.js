@@ -1,8 +1,27 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const Main_1 = __importDefault(require("./Main"));
-new Main_1.default().main();
-exports.default = Main_1.default;
+'use strict';
+
+var Main = /** @class */ (function () {
+    function Main() {
+    }
+    Main.prototype.main = function () {
+        this.core();
+        // try {
+        //   this.core();
+        // } catch (e) {
+        //   const en: string = (e + "").toString().replace(/^(.+?)\n\n\n.+$/s, "$1");
+        //   console.error(
+        //     "\x1b[31m" + en
+        //       .replace(/^Error: /, '')
+        //       .replace(/\$ (npx .+)\n/, "\x1b[36m$ $1\n\x1b[31m")
+        //     + "\x1b[0m"
+        //   );
+        // }
+    };
+    Main.prototype.core = function () {
+        //
+        console.log("aaa2");
+    };
+    return Main;
+}());
+
+new Main().main();
