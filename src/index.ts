@@ -1,4 +1,6 @@
-import Core from './Main';
-new Core().main();
+import { CommandTest } from './CommandTest';
+import { MinimalModal } from "./minimal-modal";
 
-export default Core;
+new CommandTest().test();
+
+export default MinimalModal;
