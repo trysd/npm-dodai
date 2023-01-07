@@ -1,6 +1,3 @@
-import { CommandTest } from './CommandTest';
-import { MinimalModal } from "./minimal-modal";
+import { Dodai } from './dodai';
 
-new CommandTest().test();
-
-export default MinimalModal;
+export default Dodai;
