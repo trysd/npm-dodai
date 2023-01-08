@@ -24,6 +24,7 @@ export class CommandLine {
 
     const dir = MFile.readDir(path);
     console.log(dir);
+    console.log("..update");
     
     return path;
   }
