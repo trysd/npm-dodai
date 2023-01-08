@@ -1,69 +1,80 @@
 {
   "name": "dodai",
-  "version": "0.0.4",
-  "description": "",
+  "version": "0.0.5",
+  "description": "npm module",
   "main": "dist/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/esm/index.d.ts",
+  "types": "types/index.d.ts",
+  "module": "dist/index.esm.js",
+  "browser": "dist/dodai.js",
   "bin": {
     "dodai": "dist/bin/index.js"
   },
   "files": [
+    "package.json",
+    "README.md",
+    "LICENSE",
+    "types",
     "dist"
   ],
+  "keywords": [
+    "dodai"
+  ],
+  "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
-    "buildx": "run-p build:*",
-    "build:common": "tsc",
-    "build:esm": "tsc -p tsconfig.esm.json",
+    "build": "rollup -c",
+    "lint": "eslint src/**/*.ts",
+    "format": "eslint --fix src/**/*.ts",
+    "lint-staged": "lint-staged",
+    "start": "browser-sync start --config \"./.bs-config.js\"",
     "test": "jest",
-    "build": "rollup -c"
+    "dev": "nodemon"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/trysd/npm-dodai.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/trysd/npm-dodai/issues"
   },
   "homepage": "https://github.com/trysd/npm-dodai#readme",
-  "dependencies": {
-    "@types/node": "^17.0.18",
-    "ejs": "^3.1.8",
-    "fs-extra": "^11.1.0",
-    "yaml": "^2.2.1"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "devDependencies": {
+    "@babel/core": "^7.13.16",
+    "@babel/preset-env": "^7.13.15",
     "@jest/types": "^29.3.1",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^11.0.0",
     "@types/ejs": "^3.1.1",
     "@types/fs-extra": "^9.0.13",
     "@types/jest": "^29.2.5",
     "@types/node": "^18.11.18",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
+    "dayjs": "^1.11.7",
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^8.0.3",
     "jest": "^29.3.1",
-    "nodemon": "^2.0.20",
-    "npm-run-all": "^4.1.5",
-    "rimraf": "^3.0.2",
-    "ts-jest": "^29.0.3",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.5.3",
-
-    "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "@rollup/plugin-babel": "^5.2.2",
-    "@rollup/plugin-commonjs": "^17.0.0",
-    "@rollup/plugin-node-resolve": "^11.0.1",
-    "@rollup/plugin-typescript": "^8.1.0",
+    "lint-staged": "^10.5.4",
     "lodash.camelcase": "^4.3.0",
     "lodash.upperfirst": "^4.3.1",
-    "rollup": "^2.35.1",
-    "rollup-plugin-terser": "^7.0.2"
+    "nodemon": "^2.0.20",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.79.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.5.3"
   },
   "engines": {
     "node": ">=14"

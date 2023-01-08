@@ -1,2 +1,3 @@
-import Core from './Main';
-new Core().main();
+import { Dodai } from './dodai';
+
+export default Dodai;
