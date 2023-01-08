@@ -9,17 +9,17 @@ export class CommandLine {
 
   public main(): void {
 
-      try {
-        this.exec();
-      } catch(e) {
-        const err = e === undefined || e == null ? "" : e.toString();
-        console.error(
-          "\x1b[31m" + err.replace(/\n\n\n.+?$/s, '')
+    try {
+      this.exec();
+    } catch (e) {
+      const err = e === undefined || e == null ? "" : e.toString();
+      console.error(
+        "\x1b[31m" + err.replace(/\n\n\n.+?$/s, '')
           .replace(/^Error: /, '')
-          .replace(/\$ (npx .+)\n/, "\x1b[36m$ $1\n\x1b[31m") 
-          + "\x1b[0m"
-        );
-      }
+          .replace(/\$ (npx .+)\n/, "\x1b[36m$ $1\n\x1b[31m")
+        + "\x1b[0m"
+      );
+    }
 
   }
 
@@ -35,14 +35,10 @@ export class CommandLine {
       path = "./data";
     }
 
-    // const dir = MFile.readDir(path);
-    // console.log(dir);
-    // console.log("..update");
-    
     if (process.argv.length < 3) {
       throw new Error(
         "A module name must be specified."
-        + `\n\n  $ npx dodai@latest YourModuleName\n\nto specify name.`
+        + `\n\n  $ npx dodai@latest YourModuleName`
       );
     }
 
@@ -63,6 +59,9 @@ export class CommandLine {
 
     const stdout = execSync('npx zumen@latest');
     console.log(stdout.toString());
+
+    execSync('rm -rf zumen');
+    execSync('rm zumen.json');
 
     // return path;
   }
