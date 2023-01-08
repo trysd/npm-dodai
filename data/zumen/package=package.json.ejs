@@ -1,5 +1,5 @@
 {
-  "name": "<%= name %>",
+  "name": "<%= name.replace(/([A-Z])/g, '-$1') %>",
   "version": "0.0.6",
   "description": "npm module",
   "main": "dist/index.js",
