@@ -1,3 +1,3 @@
 import { CommandLine } from '../command-line';
-new CommandLine(process.argv).main();
+new CommandLine().main();
 export default CommandLine;

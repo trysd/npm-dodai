@@ -1,14 +1,14 @@
-import { MFile } from "./MFile";
+// import { MFile } from "./MFile";
 import * as fs from 'fs-extra';
 const { execSync } = require('child_process');
 
 export class CommandLine {
-  constructor(argv: string[]) {
+  constructor() {
     // console.log("hello dodai command line tool, argv:", argv);
   }
 
   public main(): void {
-    const dataDir = this.searchDataDir();
+    // const dataDir = this.searchDataDir();
     // console.log("res:", dataDir)
   }
 
@@ -28,8 +28,27 @@ export class CommandLine {
     // console.log(dir);
     // console.log("..update");
     
+    if (process.argv.length < 3) {
+      throw new Error(
+        "A module name must be specified."
+        + `\n\n  $ npx dodai@latest YourModuleName\n\nto specify name.`
+      );
+    }
+
+    const newName = process.argv[2] || "";
+
+    if (!newName.match(/^[a-z][a-z0-9_]+$/)) {
+      throw new Error(
+        "Module names must be lowercase alphanumeric and begin with an alphabet."
+      );
+    }
+
     fs.copySync(path + "/zumen", './zumen');
     fs.copySync(path + "/zumen.json", './zumen.json');
+
+    const str = fs.readFileSync(path + "/zumen.json").toString();
+    const put = str.replace(/xname/g, newName);
+    fs.outputFileSync('./zumen.json', put);
 
     const stdout = execSync('npx zumen@latest');
     console.log(stdout.toString());
