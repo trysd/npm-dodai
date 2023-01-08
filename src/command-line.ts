@@ -42,11 +42,11 @@ export class CommandLine {
       );
     }
 
-    const newName = process.argv[2] || "";
+    const newName = (process.argv[2] || "").toLowerCase();
 
     if (!newName.match(/^[a-z][a-z0-9_]+$/)) {
       throw new Error(
-        "Module names must be lowercase alphanumeric and begin with an alphabet."
+        "Module names must be alphanumeric and must start with a letter."
       );
     }
 
