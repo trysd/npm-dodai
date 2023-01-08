@@ -9,6 +9,22 @@ export class CommandLine {
 
   public main(): void {
 
+      try {
+        this.exec();
+      } catch(e) {
+        const err = e === undefined || e == null ? "" : e.toString();
+        console.error(
+          "\x1b[31m" + err.replace(/\n\n\n.+?$/s, '')
+          .replace(/^Error: /, '')
+          .replace(/\$ (npx .+)\n/, "\x1b[36m$ $1\n\x1b[31m") 
+          + "\x1b[0m"
+        );
+      }
+
+  }
+
+  private exec(): void {
+
     const binPath = process.argv[1] || "";
 
     let path = "";
