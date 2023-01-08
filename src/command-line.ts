@@ -44,7 +44,7 @@ export class CommandLine {
 
     if (!newName.match(/^[a-z][A-Za-z0-9_]+$/)) {
       throw new Error(
-        "Module names must be alphanumeric and must start with a letter."
+        "Specify the module name with a character string that can be used as a class name."
       );
     }
 
