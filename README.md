@@ -12,6 +12,8 @@ $ npx dodai@latest ExampleName
 $ npm install
 ```
 - Names with @, etc. will be fixed manually after the boilerplate is created.
+- The package name in package.json is returned as: Manually adjust as expected.  
+ExampleColorTv => example-color-tv
 
 ## Develop usage
 
