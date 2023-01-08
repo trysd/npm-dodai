@@ -1,6 +1,6 @@
 {
   "name": "dodai",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "npm module",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
