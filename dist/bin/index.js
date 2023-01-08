@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 /*!
- * Dodai JavaScript Library v0.0.5
+ * Dodai JavaScript Library v0.0.6
  * https://github.com/trysd/npm-dodai#readme
  * Released under the MIT license
  *
- * Date: 2023-01-08T15:35Z
+ * Date: 2023-01-08T17:53Z
  */
 'use strict';
 
