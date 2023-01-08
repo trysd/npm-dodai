@@ -1,13 +1,15 @@
 import { MFile } from "./MFile";
+import * as fs from 'fs-extra';
+const { execSync } = require('child_process');
 
 export class CommandLine {
   constructor(argv: string[]) {
-    console.log("hello dodai command line tool, argv:", argv);
+    // console.log("hello dodai command line tool, argv:", argv);
   }
 
   public main(): void {
     const dataDir = this.searchDataDir();
-    console.log("res:", dataDir)
+    // console.log("res:", dataDir)
   }
 
   private searchDataDir(): string {
@@ -22,10 +24,16 @@ export class CommandLine {
       path = "./data";
     }
 
-    const dir = MFile.readDir(path);
-    console.log(dir);
-    console.log("..update");
+    // const dir = MFile.readDir(path);
+    // console.log(dir);
+    // console.log("..update");
     
+    fs.copySync(path + "/zumen", './zumen');
+    fs.copySync(path + "/zumen.json", './zumen.json');
+
+    const stdout = execSync('npx zumen@latest');
+    console.log(stdout.toString());
+
     return path;
   }
 }
