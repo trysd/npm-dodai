@@ -8,7 +8,7 @@
     ".github/release=": {}
   },
   ".vscode/": {
-    ".vscode/settings=xname": {}
+    ".vscode_sp/settings=xname": {}
   },
   "src/": {
     "bin/": {
