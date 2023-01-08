@@ -1,11 +1,8 @@
-// import { MFile } from "./MFile";
 import * as fs from 'fs-extra';
 const { execSync } = require('child_process');
 
 export class CommandLine {
-  constructor() {
-    // console.log("hello dodai command line tool, argv:", argv);
-  }
+  constructor() {}
 
   public main(): void {
 
@@ -45,7 +42,7 @@ export class CommandLine {
     const newName = (process.argv[2] || "")
       .replace(/^[A-Z]/, function(a) { return a.toLowerCase(); })
 
-    if (!newName.match(/^[a-z][a-z0-9_]+$/)) {
+    if (!newName.match(/^[a-z][A-Za-z0-9_]+$/)) {
       throw new Error(
         "Module names must be alphanumeric and must start with a letter."
       );
@@ -63,7 +60,5 @@ export class CommandLine {
 
     execSync('rm -rf zumen');
     execSync('rm zumen.json');
-
-    // return path;
   }
 }
