@@ -38,7 +38,7 @@ export class CommandLine {
     if (process.argv.length < 3) {
       throw new Error(
         "A module name must be specified."
-        + `\n\n  $ npx dodai@latest YourModuleName`
+        + `\n\n  $ npx dodai@latest YourModuleName\n`
       );
     }
 
