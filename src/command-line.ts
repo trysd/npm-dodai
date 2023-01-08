@@ -16,7 +16,8 @@ export class CommandLine {
 
     let path = "";
     if (binPath.match(/\.bin\/dodai$/)) {
-      path = binPath.replace(/node_modules\/.+?$/, 'node_modules') || "";
+      path = binPath.replace(/node_modules\/.+?$/, 'node_modules/') || "";
+      path += "dodai/data";
     } else {
       path = "./data";
     }
