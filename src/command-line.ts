@@ -8,11 +8,6 @@ export class CommandLine {
   }
 
   public main(): void {
-    // const dataDir = this.searchDataDir();
-    // console.log("res:", dataDir)
-  }
-
-  private searchDataDir(): string {
 
     const binPath = process.argv[1] || "";
 
@@ -53,6 +48,6 @@ export class CommandLine {
     const stdout = execSync('npx zumen@latest');
     console.log(stdout.toString());
 
-    return path;
+    // return path;
   }
 }
