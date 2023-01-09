@@ -33,6 +33,7 @@ export class CommandLine {
       path = "./data";
     }
 
+    console.log(path);
     if (process.argv.length < 3) {
       throw new Error(
         "A module name must be specified."
