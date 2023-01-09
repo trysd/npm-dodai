@@ -26,14 +26,17 @@ export class CommandLine {
     console.log(process.argv)
 
     let path = "";
-    if (binPath.match(/bin\/dodai$/)) {
+    if (binPath.match(/\.bin\/dodai$/)) {
       path = binPath.replace(/node_modules\/.+?$/, 'node_modules/') || "";
       path += "dodai/data";
-    } else {
+    }
+    else if (binPath.match(/bin\/dodai$/)) {
+      path = binPath + "/data";
+    }     
+    else {
       path = "./data";
     }
 
-    console.log(path);
     if (process.argv.length < 3) {
       throw new Error(
         "A module name must be specified."
