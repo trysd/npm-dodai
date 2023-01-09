@@ -23,6 +23,7 @@ export class CommandLine {
   private exec(): void {
 
     const binPath = process.argv[1] || "";
+    console.log(process.argv)
 
     let path = "";
     if (binPath.match(/\.bin\/dodai$/)) {
