@@ -24,6 +24,8 @@ export class CommandLine {
 
     const binPath = process.argv[1] || "";
 
+    console.log(__filename, __dirname, process.argv)
+
     let path = "";
     if (binPath.match(/\.bin\/dodai$/)) {
       path = binPath.replace(/node_modules\/.+?$/, 'node_modules/') || "";
