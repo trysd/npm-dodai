@@ -23,17 +23,12 @@ export class CommandLine {
   private exec(): void {
 
     const binPath = process.argv[1] || "";
-    console.log(process.argv)
 
     let path = "";
-    if (binPath.match(/bin\/dodai$/)) {
-      path = binPath + "/data";
-    }
-    else if (binPath.match(/\.bin\/dodai$/)) {
+    if (binPath.match(/\.bin\/dodai$/)) {
       path = binPath.replace(/node_modules\/.+?$/, 'node_modules/') || "";
       path += "dodai/data";
-    }
-    else {
+    } else {
       path = "./data";
     }
 
