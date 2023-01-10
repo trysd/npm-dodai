@@ -18,7 +18,13 @@ ExampleColorTv => example-color-tv
 ## Develop usage
 
 ### auto reload
+
+When creating a command line tool
 ```
-$ npm install -g --force nodemon
-$ nodemon
+$ npm run cc
+```
+
+When scripting
+```
+$ npm run dev
 ```
