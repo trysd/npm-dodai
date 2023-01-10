@@ -31,7 +31,6 @@
   ".prettierrc=": {},
   "jest=": {},
   "LICENSE=xname": {},
-  "nodemon=": {},
   "package=xname": {
     "repository_url": "",
     "issue_url": "",

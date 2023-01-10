@@ -28,3 +28,9 @@ When creating a command line tool
 ```
 $ npm run command
 ```
+
+## Related work you should do
+
+- Add NPM_TOKEN to Actions secrets on github.
+- Describe the necessary contents in repository.url etc. of package.json.
+- 
