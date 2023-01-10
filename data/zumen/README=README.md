@@ -4,13 +4,20 @@
 ..
 
 ## Develop usage
-command line tool
+
+execute command line tool
 ```
 $ npm run build && node dist/bin/index.js
 ```
 
-auto reload
+### Auto reload
+
+When creating a js tool
 ```
-$ npm install -g --force nodemon
-$ nodemon
+$ npm run dev
+```
+
+When creating a command line tool
+```
+$ npm run command
 ```
