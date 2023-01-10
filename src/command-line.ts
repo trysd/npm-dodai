@@ -44,7 +44,8 @@ export class CommandLine {
       );
     }
 
-    const newName = (process.argv[2] || "")
+    let newName = (process.argv[2] || "");
+    newName = newName
       .replace(/^[A-Z]/, function(a) { return a.toLowerCase(); })
 
     if (!newName.match(/^[a-z][A-Za-z0-9_]+$/)) {
