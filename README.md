@@ -19,12 +19,12 @@ ExampleColorTv => example-color-tv
 
 ### auto reload
 
-When creating a command line tool
-```
-$ npm run cc
-```
-
-When scripting
+When creating a js tool
 ```
 $ npm run dev
+```
+
+When creating a command line tool
+```
+$ npm run command
 ```
