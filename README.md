@@ -1,4 +1,4 @@
-# DODAI
+# [Dodai](https://www.npmjs.com/package/dodai)
 A tool that automatically creates boiler templates for creating npm packages.  
 It takes only 3 minutes to publish npm package.
 
